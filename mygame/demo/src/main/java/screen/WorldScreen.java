@@ -83,15 +83,27 @@ public class WorldScreen implements Screen {
         Monster monster1 = new Monster(new Color(0, 0, 139), (char) 15, world, map);
         Monster monster2 = new Monster(new Color(139, 28, 98), (char) 15, world, map);
         Monster monster3 = new Monster(new Color(139, 125, 123), (char) 15, world, map);
+        Monster monster4 = new Monster(new Color(0, 0, 139), (char) 15, world, map);
+        Monster monster5 = new Monster(new Color(139, 28, 98), (char) 15, world, map);
+        Monster monster6 = new Monster(new Color(139, 125, 123), (char) 15, world, map);
         world.put(monster1, 22, 19);
         world.put(monster2, 7, 10);
         world.put(monster3, 10, 25);
+        world.put(monster4, 2, 9);
+        world.put(monster5, 13, 4);
+        world.put(monster6, 20, 19);
         creatures.add(monster1);
         creatures.add(monster2);
         creatures.add(monster3);
+        creatures.add(monster4);
+        creatures.add(monster5);
+        creatures.add(monster6);
         map.add_creature_to_map(2, 22, 19);
         map.add_creature_to_map(2, 7, 10);
         map.add_creature_to_map(2, 10, 25);
+        map.add_creature_to_map(2, 2, 9);
+        map.add_creature_to_map(2, 13, 4);
+        map.add_creature_to_map(2, 20, 19);
 
         map.init_creatures(creatures);
 
@@ -100,6 +112,9 @@ public class WorldScreen implements Screen {
         exec.execute(new Thread(monster1));
         exec.execute(new Thread(monster2));
         exec.execute(new Thread(monster3));
+        exec.execute(new Thread(monster4));
+        exec.execute(new Thread(monster5));
+        exec.execute(new Thread(monster6));
     }
 
     public void build_start_screen() {
